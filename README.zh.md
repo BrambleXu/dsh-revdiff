@@ -1,6 +1,16 @@
 # dsh-revdiff
 
-[English](README.md) | 中文
+![dsh-revdiff hero](assets/hero.png)
+
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/BrambleXu/dsh-revdiff?style=flat-square" alt="MIT license"></a>
+  <a href="package.json"><img src="https://img.shields.io/badge/Node.js-%5E22.19%20%7C%20%3E%3D24-339933?style=flat-square&logo=nodedotjs&logoColor=white" alt="Node.js ^22.19 or >=24"></a>
+  <a href="package.json"><img src="https://img.shields.io/badge/TypeScript-5.9-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript 5.9"></a>
+  <a href="package.json"><img src="https://img.shields.io/badge/tests-Vitest-6E9F18?style=flat-square&logo=vitest&logoColor=white" alt="Tests with Vitest"></a>
+  <a href="https://awesome-dsh-plugin.com"><img src="https://awesome-dsh-plugin.com/badge.svg" alt="awesome · DSH plugin"></a>
+</p>
+
+<p align="center"><a href="README.md">English</a> | 中文</p>
 
 为 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) 提供原生交互式 diff 审查。插件读取 Git unified diff，将其解析为文件、hunk 和行位置，在自己的终端审查界面中展示，并将提交的批注排队为 Agent 下一轮持久 follow-up。
 
