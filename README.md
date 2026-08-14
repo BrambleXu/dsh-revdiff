@@ -2,7 +2,21 @@
 
 Native interactive diff review for [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness). The plugin reads a Git unified diff, parses it into files, hunks, and line locations, presents its own terminal review interface, and queues submitted annotations as the Agent's next durable follow-up turn.
 
-## Install
+English | [中文](README.zh.md)
+
+## Why this exists 💡
+
+Reviewing a diff in a separate tool breaks the connection between the change, the review context, and the Agent that will act on the feedback. `dsh-revdiff` keeps review inside Harness, so annotations are created against the actual Git diff and returned to the same durable session.
+
+## Features ✨
+
+- Review tracked working-tree, staged, unstaged, or base-revision changes with optional path filters.
+- Navigate between files, hunks, and diff lines from an interactive terminal.
+- Add, edit, and delete issue, suggestion, question, or praise annotations.
+- Submit structured annotations to the current Agent through `agent.followup()` with message provenance.
+- Configure Git execution, diff context, size and time limits, terminal grace period, and comment length.
+
+## Install 📦
 
 Add this checkout to a Harness profile:
 
@@ -12,7 +26,7 @@ dsh plugin --profile demo add ./dsh-revdiff
 
 The only external runtime requirement is Git in the same execution world as Harness.
 
-## Use
+## Use 🚀
 
 ```text
 /revdiff
@@ -37,7 +51,7 @@ The Harness process must own an interactive terminal. The review interface suppo
 
 Annotations retain the file, old/new side, line number, selected code, kind, and comment. They are sent through `agent.followup()` with `dsh-revdiff` message provenance, so the review enters the same Harness session rather than an external side channel.
 
-## Configure
+## Configure ⚙️
 
 Override the inserted row in a later Harness patch layer:
 
@@ -53,21 +67,21 @@ Override the inserted row in a later Harness patch layer:
     maxCommentLength: 4000
 ```
 
-## Develop
+## Develop 🧑‍💻
 
 ```sh
 pnpm install
 pnpm run check
 ```
 
-## Scope
+## Scope 🎯
 
 Version 0.1 reviews textual changes already represented by `git diff`. Untracked files, binary patches, side-by-side rendering, mouse input, and a browser-hosted review surface are not included yet. The review engine and annotation model are owned by this project so those capabilities can evolve for Harness without following another review tool's interface.
 
-## License
+## License 📄
 
 MIT
 
-## Credits
+## Credits 🙏
 
 The product idea is informed by [`pi-diff-review`](https://github.com/badlogic/pi-diff-review) and [`revdiff`](https://github.com/umputun/revdiff), but this is an independent implementation built specifically around Harness commands, managed subprocesses, Agent lifecycle, and message provenance. It does not install, execute, wrap, or parse output from `revdiff`.
