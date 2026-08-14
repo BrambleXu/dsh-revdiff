@@ -1,0 +1,10 @@
+- insert:
+    - id: dsh-revdiff
+      name: dsh-revdiff
+      config:
+        gitBinary: git
+        contextLines: 3
+        maxDiffBytes: 2097152
+        diffTimeoutMs: 30000
+        graceMs: 2000
+        maxCommentLength: 4000
