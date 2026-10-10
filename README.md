@@ -87,6 +87,8 @@ pnpm install
 pnpm run check
 ```
 
+Commit the generated `lib/` files with source changes so Git installs include the declared package entry before build scripts run.
+
 ## Scope 🎯
 
 Version 0.1 reviews textual changes already represented by `git diff`. Untracked files, binary patches, side-by-side rendering, mouse input, and a browser-hosted review surface are not included yet. The review engine and annotation model are owned by this project so those capabilities can evolve for Harness without following another review tool's interface.
